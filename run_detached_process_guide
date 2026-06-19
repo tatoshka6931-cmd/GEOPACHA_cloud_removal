@@ -1,6 +1,8 @@
+this is to prevent crashes for large sessions that may cause spikes in RAM. I've had a few times where vscode would crash and quit 
+
 
 setup:
-~ conda install -c conda-forge tmux
+**~ conda install -c conda-forge tmux**
 
 Then cd into the project, substituting your UID:
 ~ cd "/run/user/<YOUR_UID>/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project"
@@ -9,8 +11,6 @@ mine: ~ cd "/run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbi
 ~ conda activate rastervision
 
 Run the script in a detached session:
-Running directly in a terminal/VSCode means closing the window kills the
-job, and a memory spike will crash vscode
 ~ tmux new -s train      # or -s infer
 ~ conda activate rastervision
 ~ python cloud_removal_training.py     # or cloud_removal_inference.py
@@ -23,20 +23,14 @@ Reattach later:
 List all running sessions:
 ~ tmux ls
 
-Live log output (tmux: just watch the pane; nohup: tail the log file):
+Live log output:
 ~ tail -f ~/train_log.txt
 
-Ctrl+C exits the tail — it does not stop the actual job.
-
-GPU usage:
+monitor GPU usage:
 ~ nvidia-smi -l 1
-
-System memory (watch for it climbing toward 100% — that's the OOM risk):
-~ free -h
 
 Confirm the process is still alive (nohup method):
 ~ ps aux | grep cloud_removal
-
 
 kill previous session:
 ~ tmux kill-session -t infer
