@@ -2,17 +2,19 @@ this is to prevent crashes for large sessions that may cause spikes in RAM. I've
 
 
 setup:
-**~ conda install -c conda-forge tmux**
+~ **conda install -c conda-forge tmux**
 
 Then cd into the project, substituting your UID:
 ~ cd "/run/user/<YOUR_UID>/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project"
-mine: **~ cd "/run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project"**
+mine: ~ **cd "/run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project"**
 
-**~ conda activate rastervision**
+~ **conda activate rastervision**
 
 Run the script in a detached session:
 ~ **tmux new -s train**      # or -s infer
+
 ~ **conda activate rastervision**
+
 ~ **python cloud_removal_training.py**     # or cloud_removal_inference.py
 
 Detach (job keeps running): press Ctrl+B, then D.
