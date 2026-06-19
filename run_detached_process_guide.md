@@ -6,31 +6,31 @@ setup:
 
 Then cd into the project, substituting your UID:
 ~ cd "/run/user/<YOUR_UID>/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project"
-mine: ~ cd "/run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project"
+mine: **~ cd "/run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project"**
 
-~ conda activate rastervision
+**~ conda activate rastervision**
 
 Run the script in a detached session:
-~ tmux new -s train      # or -s infer
-~ conda activate rastervision
-~ python cloud_removal_training.py     # or cloud_removal_inference.py
+~ **tmux new -s train**      # or -s infer
+~ **conda activate rastervision**
+~ **python cloud_removal_training.py**     # or cloud_removal_inference.py
 
 Detach (job keeps running): press Ctrl+B, then D.
 
 Reattach later:
-~ tmux attach -t train    # or -t infer
+~ **tmux attach -t train**    # or -t infer
 
 List all running sessions:
-~ tmux ls
+~ **tmux ls**
 
 Live log output:
-~ tail -f ~/train_log.txt
+~ **tail -f ~/train_log.txt**
 
 monitor GPU usage:
-~ nvidia-smi -l 1
+~ **nvidia-smi -l 1**
 
 Confirm the process is still alive (nohup method):
-~ ps aux | grep cloud_removal
+~ **ps aux | grep cloud_removal**
 
 kill previous session:
-~ tmux kill-session -t infer
+~ **tmux kill-session -t infer**
