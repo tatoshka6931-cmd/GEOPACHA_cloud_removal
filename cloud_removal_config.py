@@ -22,7 +22,7 @@ IMAGE_DIRECTORY  = f'{GVFS_BASE}/Images/'
 AOI_DIRECTORY    = f'{GVFS_BASE}/AOI/'
 LABELS_URI       = f'{GVFS_BASE}/Labels.geojson'
 LOG_DIRECTORY    = f'{GVFS_BASE}/model/training_logs/'
-OUTPUT_DIRECTORY = f'{GVFS_BASE}/model/output/'
+OUTPUT_DIRECTORY = f'{GVFS_BASE}/model/output_v2/'
 LOCAL_LABELS_DIR = '/home/kapitot/labels_output_tempfolder/'
 WEIGHTS_PATH = f'{OUTPUT_DIRECTORY}cloud_model_weights.pth'    # train.py writes here; infer.py reads from here.
 LOCAL_IMG_CACHE = '/home/kapitot/images_local_copy/'
@@ -32,7 +32,7 @@ BATCH_SIZE   = 8
 TILE_SIZE    = 512   # 512x512 
 TRAIN_STRIDE = 256   # 50% overlap during training
 INFER_STRIDE = 512   # each pixel predicted once
-NUM_EPOCHS   = 1
+NUM_EPOCHS   = 9
 LR           = 1e-3
 NUM_WORKERS  = 4
 
@@ -144,7 +144,7 @@ def build_full_image_ds(image_uri: str, stride: int):
     Omitting aoi_uri/within_aoi means windows cover the full raster extent.
     """
     image_uri=get_local_image_copy(image_uri)
-    
+
     return SemanticSegmentationSlidingWindowGeoDataset.from_uris(
         class_config=class_config,
         image_uri=image_uri,
@@ -159,7 +159,13 @@ def get_local_image_copy(image_uri: str) -> str:
     """Copy a raster to local disk once, so sliding-window reads don't hit Samba per-tile."""
     Path(LOCAL_IMG_CACHE).mkdir(parents=True, exist_ok=True)
     local_path = Path(LOCAL_IMG_CACHE) / Path(image_uri).name
+
+    if local_path.exists() and local_path.stat().st_size != Path(image_uri).stat().st_size:
+        logging.warning(f'Cached copy of {local_path.name} looks truncated — re-copying.')
+        local_path.unlink()
+
     if not local_path.exists():
         logging.info(f'Caching {image_uri} locally…')
         shutil.copyfile(image_uri, local_path)
+
     return str(local_path)
