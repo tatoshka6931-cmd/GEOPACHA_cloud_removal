@@ -1,0 +1,11 @@
+2026-07-03 14:53:35,823  Matched 12 image/AOI pairs
+2026-07-03 14:53:35,824  Building dataloaders…
+2026-07-03 14:54:02,037  Tile counts — train: 7081 val: 3058  test: 5936
+2026-07-03 14:54:02,577  Model loaded (FPN/ResNet50, 8-band input, 2 output classes)
+2026-07-03 14:54:02,756  Starting training for 11 epochs
+2026-07-03 14:54:02,758  train_ds: 7081 items
+2026-07-03 14:54:02,759  test_ds: 5936 items
+2026-07-03 14:54:02,760  Plotting sample training batch.
+2026-07-03 14:54:03,464  Plotting sample validation batch.
+2026-07-03 14:54:04,198  Plotting sample test batch.
+2026-07-03 14:54:04,950  epoch: 0

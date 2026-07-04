@@ -1,0 +1,280 @@
+2026-07-03 14:55:28,160  Matched 12 image/AOI pairs
+2026-07-03 14:55:28,161  Building dataloaders…
+2026-07-03 14:55:54,139  Tile counts — train: 7081 val: 3058  test: 5936
+2026-07-03 14:55:54,681  Model loaded (FPN/ResNet50, 8-band input, 2 output classes)
+2026-07-03 14:55:54,874  Starting training for 11 epochs
+2026-07-03 14:55:54,875  train_ds: 7081 items
+2026-07-03 14:55:54,876  test_ds: 5936 items
+2026-07-03 14:55:54,877  Plotting sample training batch.
+2026-07-03 14:55:55,539  Plotting sample validation batch.
+2026-07-03 14:55:56,255  Plotting sample test batch.
+2026-07-03 14:55:56,992  epoch: 0
+2026-07-03 15:06:55,307  metrics:
+{'epoch': 0,
+ 'train_loss': 0.1817908138036728,
+ 'train_time': '0:07:43.562453',
+ 'val_loss': 0.036535896360874176,
+ 'avg_precision': 0.9826415777206421,
+ 'avg_recall': 0.981433629989624,
+ 'avg_f1': 0.9820372462272644,
+ 'background_precision': 0.9988287091255188,
+ 'background_recall': 0.9771894216537476,
+ 'background_f1': 0.9878905415534973,
+ 'cloud_precision': 0.9268864989280701,
+ 'cloud_recall': 0.9960528016090393,
+ 'cloud_f1': 0.9602257609367371,
+ 'valid_time': '0:03:14.729106'}
+2026-07-03 15:06:59,368  epoch: 1
+2026-07-03 15:17:46,263  metrics:
+{'epoch': 1,
+ 'train_loss': 0.1497800350189209,
+ 'train_time': '0:07:33.080556',
+ 'val_loss': 0.11860375851392746,
+ 'avg_precision': 0.9680005311965942,
+ 'avg_recall': 0.965071976184845,
+ 'avg_f1': 0.9665340185165405,
+ 'background_precision': 0.9937620759010315,
+ 'background_recall': 0.9609636068344116,
+ 'background_f1': 0.9770876169204712,
+ 'cloud_precision': 0.8792670965194702,
+ 'cloud_recall': 0.9792230725288391,
+ 'cloud_f1': 0.9265570640563965,
+ 'valid_time': '0:03:13.804476'}
+2026-07-03 15:17:50,230  epoch: 2
+2026-07-03 15:28:33,560  metrics:
+{'epoch': 2,
+ 'train_loss': 0.14277245104312897,
+ 'train_time': '0:07:30.143923',
+ 'val_loss': 0.028203094378113747,
+ 'avg_precision': 0.9901930093765259,
+ 'avg_recall': 0.9901067614555359,
+ 'avg_f1': 0.9901499152183533,
+ 'background_precision': 0.9958238005638123,
+ 'background_recall': 0.9913921356201172,
+ 'background_f1': 0.993602991104126,
+ 'cloud_precision': 0.9707984328269958,
+ 'cloud_recall': 0.9856795072555542,
+ 'cloud_f1': 0.9781824350357056,
+ 'valid_time': '0:03:13.175519'}
+2026-07-03 15:28:37,568  epoch: 3
+2026-07-03 15:39:20,296  metrics:
+{'epoch': 3,
+ 'train_loss': 0.14048700034618378,
+ 'train_time': '0:07:29.706709',
+ 'val_loss': 0.05452635511755943,
+ 'avg_precision': 0.9881084561347961,
+ 'avg_recall': 0.9880980849266052,
+ 'avg_f1': 0.9881032705307007,
+ 'background_precision': 0.9926480650901794,
+ 'background_recall': 0.9919897317886353,
+ 'background_f1': 0.9923188090324402,
+ 'cloud_precision': 0.9724722504615784,
+ 'cloud_recall': 0.9746938347816467,
+ 'cloud_f1': 0.9735817313194275,
+ 'valid_time': '0:03:13.007148'}
+2026-07-03 15:39:24,532  epoch: 4
+2026-07-03 15:50:08,814  metrics:
+{'epoch': 4,
+ 'train_loss': 0.13525858521461487,
+ 'train_time': '0:07:31.281673',
+ 'val_loss': 0.02720733918249607,
+ 'avg_precision': 0.9887500405311584,
+ 'avg_recall': 0.9885454177856445,
+ 'avg_f1': 0.9886477589607239,
+ 'background_precision': 0.9964430332183838,
+ 'background_recall': 0.9887495040893555,
+ 'background_f1': 0.992581307888031,
+ 'cloud_precision': 0.9622524976730347,
+ 'cloud_recall': 0.9878429770469666,
+ 'cloud_f1': 0.9748798608779907,
+ 'valid_time': '0:03:12.985661'}
+2026-07-03 15:50:12,772  epoch: 5
+2026-07-03 16:00:58,625  metrics:
+{'epoch': 5,
+ 'train_loss': 0.1272536814212799,
+ 'train_time': '0:07:32.017196',
+ 'val_loss': 0.026246167719364166,
+ 'avg_precision': 0.9887965321540833,
+ 'avg_recall': 0.9885862469673157,
+ 'avg_f1': 0.9886913299560547,
+ 'background_precision': 0.9965479373931885,
+ 'background_recall': 0.988697350025177,
+ 'background_f1': 0.9926071763038635,
+ 'cloud_precision': 0.9620972871780396,
+ 'cloud_recall': 0.9882034063339233,
+ 'cloud_f1': 0.9749755859375,
+ 'valid_time': '0:03:13.822140'}
+2026-07-03 16:01:02,642  epoch: 6
+2026-07-03 16:11:52,933  metrics:
+{'epoch': 6,
+ 'train_loss': 0.12076959013938904,
+ 'train_time': '0:07:35.668739',
+ 'val_loss': 0.02593878284096718,
+ 'avg_precision': 0.9848912358283997,
+ 'avg_recall': 0.9840943217277527,
+ 'avg_f1': 0.9844925999641418,
+ 'background_precision': 0.9983221292495728,
+ 'background_recall': 0.98112553358078,
+ 'background_f1': 0.9896491169929504,
+ 'cloud_precision': 0.938629686832428,
+ 'cloud_recall': 0.9943203330039978,
+ 'cloud_f1': 0.9656727313995361,
+ 'valid_time': '0:03:14.609043'}
+2026-07-03 16:11:56,908  epoch: 7
+2026-07-03 16:22:42,373  metrics:
+{'epoch': 7,
+ 'train_loss': 0.1104700118303299,
+ 'train_time': '0:07:31.772577',
+ 'val_loss': 0.026375018060207367,
+ 'avg_precision': 0.9886168241500854,
+ 'avg_recall': 0.9883599877357483,
+ 'avg_f1': 0.9884883761405945,
+ 'background_precision': 0.9969406723976135,
+ 'background_recall': 0.9880126118659973,
+ 'background_f1': 0.9924565553665161,
+ 'cloud_precision': 0.9599460363388062,
+ 'cloud_recall': 0.9895567893981934,
+ 'cloud_f1': 0.9745265245437622,
+ 'valid_time': '0:03:13.678303'}
+2026-07-03 16:22:46,396  epoch: 8
+2026-07-03 16:33:35,007  metrics:
+{'epoch': 8,
+ 'train_loss': 0.10581417381763458,
+ 'train_time': '0:07:34.301636',
+ 'val_loss': 0.0258497204631567,
+ 'avg_precision': 0.9869672060012817,
+ 'avg_recall': 0.9865185618400574,
+ 'avg_f1': 0.9867428541183472,
+ 'background_precision': 0.9974711537361145,
+ 'background_recall': 0.9851020574569702,
+ 'background_f1': 0.9912480115890503,
+ 'cloud_precision': 0.9507870674133301,
+ 'cloud_recall': 0.9913976192474365,
+ 'cloud_f1': 0.9706677794456482,
+ 'valid_time': '0:03:14.296008'}
+2026-07-03 16:33:39,010  epoch: 9
+2026-07-03 16:44:27,767  metrics:
+{'epoch': 9,
+ 'train_loss': 0.09840613603591919,
+ 'train_time': '0:07:35.802577',
+ 'val_loss': 0.025605659931898117,
+ 'avg_precision': 0.9887349605560303,
+ 'avg_recall': 0.9885774254798889,
+ 'avg_f1': 0.988656222820282,
+ 'background_precision': 0.9958269596099854,
+ 'background_recall': 0.9894072413444519,
+ 'background_f1': 0.9926066994667053,
+ 'cloud_precision': 0.9643067717552185,
+ 'cloud_recall': 0.9857187271118164,
+ 'cloud_f1': 0.974895179271698,
+ 'valid_time': '0:03:12.940840'}
+2026-07-03 16:44:31,726  epoch: 10
+2026-07-03 16:55:17,582  metrics:
+{'epoch': 10,
+ 'train_loss': 0.09271003305912018,
+ 'train_time': '0:07:34.380627',
+ 'val_loss': 0.023953139781951904,
+ 'avg_precision': 0.9879648089408875,
+ 'avg_recall': 0.9876784682273865,
+ 'avg_f1': 0.987821638584137,
+ 'background_precision': 0.9967512488365173,
+ 'background_recall': 0.9873192310333252,
+ 'background_f1': 0.9920127987861633,
+ 'cloud_precision': 0.957700788974762,
+ 'cloud_recall': 0.9889160394668579,
+ 'cloud_f1': 0.9730581045150757,
+ 'valid_time': '0:03:11.461657'}
+2026-07-03 16:55:21,507  Training loop complete
+2026-07-03 16:55:25,417  Weights saved @ /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/model/output_v4/cloud_model_weights.pth
+2026-07-03 16:55:25,418  Model was not configured via ModelConfig, and therefore, will not be reconstructable form the model-bundle. You will need to initialize the model yourself and pass it to from_model_bundle().
+2026-07-03 16:55:25,420  Creating bundle.
+2026-07-03 16:55:27,797  Exporting to model to ONNX.
+2026-07-03 16:55:38,239  No unused functions to remove
+2026-07-03 16:55:38,242  The model version conversion is not supported by the onnxscript version converter and fallback is enabled. The model will be converted using the onnx C API (target version: 15).
+2026-07-03 16:55:38,475  Failed to convert the model to the target version 15 using the ONNX C API. The model was not modified
+Traceback (most recent call last):
+  File "/home/kapitot/miniconda3/envs/rastervision/lib/python3.11/site-packages/onnxscript/version_converter/__init__.py", line 137, in call
+    converted_proto = _c_api_utils.call_onnx_api(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kapitot/miniconda3/envs/rastervision/lib/python3.11/site-packages/onnxscript/version_converter/_c_api_utils.py", line 65, in call_onnx_api
+    result = func(proto)
+             ^^^^^^^^^^^
+  File "/home/kapitot/miniconda3/envs/rastervision/lib/python3.11/site-packages/onnxscript/version_converter/__init__.py", line 132, in _partial_convert_version
+    return onnx.version_converter.convert_version(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kapitot/miniconda3/envs/rastervision/lib/python3.11/site-packages/onnx/version_converter.py", line 39, in convert_version
+    converted_model_str = C.convert_version(model_str, target_version)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /github/workspace/onnx/version_converter/BaseConverter.h:64: adapter_lookup: Assertion `false` failed: No Adapter To Version $17 for Resize
+2026-07-03 16:55:38,500  Removed 991 unused nodes
+2026-07-03 16:55:38,503  No unused functions to remove
+2026-07-03 16:55:38,507  Skipping constant folding for node 'node_Split_1563' because it is graph input to preserve graph signature
+2026-07-03 16:55:39,047  Removed 838 unused nodes
+2026-07-03 16:55:39,049  Applied 218 of general pattern rewrite rules.
+2026-07-03 16:55:39,053  No unused functions to remove
+2026-07-03 16:55:39,054  Skipping constant folding for node 'node_Split_1563' because it is graph input to preserve graph signature
+2026-07-03 16:55:39,159  Removed 6 unused nodes
+2026-07-03 16:55:39,163  No unused functions to remove
+2026-07-03 16:55:39,172  Replaced initializer 'val_1208' with existing initializer 'val_1186'
+2026-07-03 16:55:39,173  Replaced initializer 'val_1212' with existing initializer 'val_1190'
+2026-07-03 16:55:39,174  Replaced initializer 'val_1215' with existing initializer 'val_1193'
+2026-07-03 16:55:39,175  Replaced initializer 'val_1234' with existing initializer 'val_1186'
+2026-07-03 16:55:39,176  Replaced initializer 'val_1238' with existing initializer 'val_1190'
+2026-07-03 16:55:39,176  Replaced initializer 'val_1241' with existing initializer 'val_1193'
+2026-07-03 16:55:39,177  Replaced initializer 'val_1257' with existing initializer 'val_1186'
+2026-07-03 16:55:39,177  Replaced initializer 'val_1261' with existing initializer 'val_1190'
+2026-07-03 16:55:39,178  Replaced initializer 'val_1264' with existing initializer 'val_1193'
+2026-07-03 16:55:39,178  Replaced initializer 'val_1277' with existing initializer 'val_1229'
+2026-07-03 16:55:39,179  Replaced initializer 'val_1282' with existing initializer 'val_1186'
+2026-07-03 16:55:39,180  Replaced initializer 'val_1286' with existing initializer 'val_1190'
+2026-07-03 16:55:39,180  Replaced initializer 'val_1289' with existing initializer 'val_1193'
+2026-07-03 16:55:39,181  Replaced initializer 'val_1305' with existing initializer 'val_1186'
+2026-07-03 16:55:39,182  Replaced initializer 'val_1309' with existing initializer 'val_1190'
+2026-07-03 16:55:39,182  Replaced initializer 'val_1312' with existing initializer 'val_1193'
+2026-07-03 16:55:39,183  Replaced initializer 'val_1328' with existing initializer 'val_1186'
+2026-07-03 16:55:39,184  Replaced initializer 'val_1332' with existing initializer 'val_1190'
+2026-07-03 16:55:39,184  Replaced initializer 'val_1335' with existing initializer 'val_1193'
+2026-07-03 16:55:39,185  Replaced initializer 'val_1348' with existing initializer 'val_1229'
+2026-07-03 16:55:39,185  Replaced initializer 'val_1353' with existing initializer 'val_1186'
+2026-07-03 16:55:39,186  Replaced initializer 'val_1357' with existing initializer 'val_1190'
+2026-07-03 16:55:39,186  Replaced initializer 'val_1360' with existing initializer 'val_1193'
+2026-07-03 16:55:39,187  Replaced initializer 'val_1376' with existing initializer 'val_1186'
+2026-07-03 16:55:39,188  Replaced initializer 'val_1380' with existing initializer 'val_1190'
+2026-07-03 16:55:39,189  Replaced initializer 'val_1383' with existing initializer 'val_1193'
+2026-07-03 16:55:39,189  Replaced initializer 'val_1399' with existing initializer 'val_1186'
+2026-07-03 16:55:39,190  Replaced initializer 'val_1403' with existing initializer 'val_1190'
+2026-07-03 16:55:39,190  Replaced initializer 'val_1406' with existing initializer 'val_1193'
+2026-07-03 16:55:39,191  Replaced initializer 'val_1422' with existing initializer 'val_1186'
+2026-07-03 16:55:39,192  Replaced initializer 'val_1426' with existing initializer 'val_1190'
+2026-07-03 16:55:39,193  Replaced initializer 'val_1429' with existing initializer 'val_1193'
+2026-07-03 16:55:39,193  Replaced initializer 'val_1442' with existing initializer 'val_1229'
+2026-07-03 16:55:39,194  Replaced initializer 'val_1447' with existing initializer 'val_1186'
+2026-07-03 16:55:39,195  Replaced initializer 'val_1451' with existing initializer 'val_1190'
+2026-07-03 16:55:39,195  Replaced initializer 'val_1454' with existing initializer 'val_1193'
+2026-07-03 16:55:39,196  Replaced initializer 'val_1470' with existing initializer 'val_1186'
+2026-07-03 16:55:39,196  Replaced initializer 'val_1474' with existing initializer 'val_1190'
+2026-07-03 16:55:39,197  Replaced initializer 'val_1477' with existing initializer 'val_1193'
+2026-07-03 16:55:39,197  Replaced initializer 'val_1493' with existing initializer 'val_1186'
+2026-07-03 16:55:39,198  Replaced initializer 'val_1497' with existing initializer 'val_1190'
+2026-07-03 16:55:39,199  Replaced initializer 'val_1500' with existing initializer 'val_1193'
+2026-07-03 16:55:39,200  Replaced initializer 'val_1516' with existing initializer 'val_1186'
+2026-07-03 16:55:39,200  Replaced initializer 'val_1520' with existing initializer 'val_1190'
+2026-07-03 16:55:39,201  Replaced initializer 'val_1523' with existing initializer 'val_1193'
+2026-07-03 16:55:39,201  Replaced initializer 'val_1539' with existing initializer 'val_1186'
+2026-07-03 16:55:39,202  Replaced initializer 'val_1543' with existing initializer 'val_1190'
+2026-07-03 16:55:39,203  Replaced initializer 'val_1546' with existing initializer 'val_1193'
+2026-07-03 16:55:39,203  Replaced initializer 'val_1559' with existing initializer 'val_1229'
+2026-07-03 16:55:39,204  Replaced initializer 'val_1301' with existing initializer 'val_1253'
+2026-07-03 16:55:39,205  Replaced initializer 'val_1324' with existing initializer 'val_1253'
+2026-07-03 16:55:39,206  Replaced initializer 'val_1372' with existing initializer 'val_1253'
+2026-07-03 16:55:39,206  Replaced initializer 'val_1395' with existing initializer 'val_1253'
+2026-07-03 16:55:39,207  Replaced initializer 'val_1418' with existing initializer 'val_1253'
+2026-07-03 16:55:39,207  Replaced initializer 'val_1466' with existing initializer 'val_1253'
+2026-07-03 16:55:39,208  Replaced initializer 'val_1489' with existing initializer 'val_1253'
+2026-07-03 16:55:39,208  Replaced initializer 'val_1512' with existing initializer 'val_1253'
+2026-07-03 16:55:39,209  Replaced initializer 'val_1535' with existing initializer 'val_1253'
+2026-07-03 16:55:39,778  Saving bundle to /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/model/output_v4/model-bundle.zip.
+2026-07-03 16:56:41,595  Model bundle saved @ /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/model/output_v4/
+2026-07-03 16:56:41,596  Making and plotting sample predictions on the valid set...
+2026-07-03 16:56:42,508  Sample predictions written to /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/model/output_v4/valid_preds.png.
+2026-07-03 16:56:42,509  Validation prediction plots saved

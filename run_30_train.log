@@ -1,0 +1,43 @@
+2026-06-24 18:23:40,551  Matched 13 image/AOI pairs
+2026-06-24 18:23:40,552  Building dataloaders…
+2026-06-24 18:23:40,553  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/1030010090282700_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-24 18:27:46,152  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/103001001B691200_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-24 18:32:12,488  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/1030010007C71400_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-24 18:37:06,653  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/103001005A4F9E00_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-24 18:41:36,633  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/1030010058CA6E00_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-24 18:48:40,160  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/10300100FBB5D000_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-24 18:57:16,081  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/103001005A3A2B00_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-24 19:01:33,529  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/1030010059CFE500_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-24 19:07:03,077  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/103001000CB1E200_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-24 19:13:18,016  Tile counts — train: 9820 val: 3058  test: 4555
+2026-06-24 19:13:18,599  Model loaded (FPN/ResNet50, 8-band input, 2 output classes)
+2026-06-24 19:13:18,804  Starting training for 1 epochs
+2026-06-24 19:13:18,806  train_ds: 9820 items
+2026-06-24 19:13:18,807  test_ds: 4555 items
+2026-06-24 19:13:18,808  Plotting sample training batch.
+2026-06-24 19:13:20,829  Plotting sample validation batch.
+2026-06-24 19:13:22,907  Plotting sample test batch.
+2026-06-24 19:13:23,011  GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 4294967295, col 4294967295, tile 93; got 0 bytes, expected 5983696'
+2026-06-24 19:13:23,012  GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,014  GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 4294967295, col 4294967295, tile 89; got 0 bytes, expected 6072436'
+2026-06-24 19:13:23,014  GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 4294967295, col 4294967295, tile 97; got 0 bytes, expected 5662607'
+2026-06-24 19:13:23,014  GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 4294967295, col 4294967295, tile 85; got 0 bytes, expected 6346278'
+2026-06-24 19:13:23,015  GDAL signalled an error: err_no=1, msg='103001000E1C4E00_Multi_Ortho_Tile_cog.TIF, band 1: IReadBlock failed at X offset 9, Y offset 4: TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,016  GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,016  GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,018  GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,019  GDAL signalled an error: err_no=1, msg='103001000E1C4E00_Multi_Ortho_Tile_cog.TIF, band 1: IReadBlock failed at X offset 5, Y offset 4: TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,020  GDAL signalled an error: err_no=1, msg='103001000E1C4E00_Multi_Ortho_Tile_cog.TIF, band 1: IReadBlock failed at X offset 13, Y offset 4: TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,021  GDAL signalled an error: err_no=1, msg='103001000E1C4E00_Multi_Ortho_Tile_cog.TIF, band 1: IReadBlock failed at X offset 1, Y offset 4: TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,027  GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 4294967295, col 4294967295, tile 109; got 0 bytes, expected 6253183'
+2026-06-24 19:13:23,028  GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 4294967295, col 4294967295, tile 117; got 0 bytes, expected 5669965'
+2026-06-24 19:13:23,029  GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,030  GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,031  GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 4294967295, col 4294967295, tile 113; got 0 bytes, expected 5989380'
+2026-06-24 19:13:23,037  GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 4294967295, col 4294967295, tile 122; got 0 bytes, expected 5506325'
+2026-06-24 19:13:23,047  GDAL signalled an error: err_no=1, msg='103001000E1C4E00_Multi_Ortho_Tile_cog.TIF, band 1: IReadBlock failed at X offset 4, Y offset 5: TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,047  GDAL signalled an error: err_no=1, msg='103001000E1C4E00_Multi_Ortho_Tile_cog.TIF, band 1: IReadBlock failed at X offset 12, Y offset 5: TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,048  GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,050  GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,053  GDAL signalled an error: err_no=1, msg='103001000E1C4E00_Multi_Ortho_Tile_cog.TIF, band 1: IReadBlock failed at X offset 8, Y offset 5: TIFFReadEncodedTile() failed.'
+2026-06-24 19:13:23,054  GDAL signalled an error: err_no=1, msg='103001000E1C4E00_Multi_Ortho_Tile_cog.TIF, band 1: IReadBlock failed at X offset 17, Y offset 5: TIFFReadEncodedTile() failed.'

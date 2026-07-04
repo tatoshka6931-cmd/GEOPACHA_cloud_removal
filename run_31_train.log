@@ -1,0 +1,121 @@
+2026-06-26 13:03:16,677  Matched 13 image/AOI pairs
+2026-06-26 13:03:16,679  Building dataloaders…
+2026-06-26 13:03:28,271  Caching /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/Images/103001000E1C4E00_Multi_Ortho_Tile_cog.TIF locally…
+2026-06-26 13:05:30,700  Tile counts — train: 9820 val: 3058  test: 4555
+2026-06-26 13:05:31,349  Model loaded (FPN/ResNet50, 8-band input, 2 output classes)
+2026-06-26 13:05:31,749  Starting training for 1 epochs
+2026-06-26 13:05:31,752  train_ds: 9820 items
+2026-06-26 13:05:31,752  test_ds: 4555 items
+2026-06-26 13:05:31,753  Plotting sample training batch.
+2026-06-26 13:05:33,964  Plotting sample validation batch.
+2026-06-26 13:05:35,898  Plotting sample test batch.
+2026-06-26 13:05:37,964  epoch: 0
+2026-06-26 13:12:57,890  metrics:
+{'epoch': 0,
+ 'train_loss': 0.1786615550518036,
+ 'train_time': '0:06:24.391735',
+ 'val_loss': 0.08432964980602264,
+ 'avg_precision': 0.9669885635375977,
+ 'avg_recall': 0.9602000713348389,
+ 'avg_f1': 0.9635823965072632,
+ 'background_precision': 0.9991514682769775,
+ 'background_recall': 0.9521356225013733,
+ 'background_f1': 0.9750771522521973,
+ 'cloud_precision': 0.8227241635322571,
+ 'cloud_recall': 0.9963731169700623,
+ 'cloud_f1': 0.901260495185852,
+ 'valid_time': '0:00:55.521909'}
+2026-06-26 13:13:01,881  Training loop complete
+2026-06-26 13:13:05,725  Weights saved @ /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/model/output_v2/cloud_model_weights.pth
+2026-06-26 13:13:05,727  Model was not configured via ModelConfig, and therefore, will not be reconstructable form the model-bundle. You will need to initialize the model yourself and pass it to from_model_bundle().
+2026-06-26 13:13:05,728  Creating bundle.
+2026-06-26 13:13:08,450  Exporting to model to ONNX.
+2026-06-26 13:13:19,082  No unused functions to remove
+2026-06-26 13:13:19,085  The model version conversion is not supported by the onnxscript version converter and fallback is enabled. The model will be converted using the onnx C API (target version: 15).
+2026-06-26 13:13:19,322  Failed to convert the model to the target version 15 using the ONNX C API. The model was not modified
+Traceback (most recent call last):
+  File "/home/kapitot/miniconda3/envs/rastervision/lib/python3.11/site-packages/onnxscript/version_converter/__init__.py", line 137, in call
+    converted_proto = _c_api_utils.call_onnx_api(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kapitot/miniconda3/envs/rastervision/lib/python3.11/site-packages/onnxscript/version_converter/_c_api_utils.py", line 65, in call_onnx_api
+    result = func(proto)
+             ^^^^^^^^^^^
+  File "/home/kapitot/miniconda3/envs/rastervision/lib/python3.11/site-packages/onnxscript/version_converter/__init__.py", line 132, in _partial_convert_version
+    return onnx.version_converter.convert_version(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kapitot/miniconda3/envs/rastervision/lib/python3.11/site-packages/onnx/version_converter.py", line 39, in convert_version
+    converted_model_str = C.convert_version(model_str, target_version)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /github/workspace/onnx/version_converter/BaseConverter.h:64: adapter_lookup: Assertion `false` failed: No Adapter To Version $17 for Resize
+2026-06-26 13:13:19,346  Removed 991 unused nodes
+2026-06-26 13:13:19,349  No unused functions to remove
+2026-06-26 13:13:19,353  Skipping constant folding for node 'node_Split_1563' because it is graph input to preserve graph signature
+2026-06-26 13:13:19,891  Removed 838 unused nodes
+2026-06-26 13:13:19,892  Applied 218 of general pattern rewrite rules.
+2026-06-26 13:13:19,896  No unused functions to remove
+2026-06-26 13:13:19,897  Skipping constant folding for node 'node_Split_1563' because it is graph input to preserve graph signature
+2026-06-26 13:13:20,007  Removed 6 unused nodes
+2026-06-26 13:13:20,012  No unused functions to remove
+2026-06-26 13:13:20,017  Replaced initializer 'val_1208' with existing initializer 'val_1186'
+2026-06-26 13:13:20,018  Replaced initializer 'val_1212' with existing initializer 'val_1190'
+2026-06-26 13:13:20,019  Replaced initializer 'val_1215' with existing initializer 'val_1193'
+2026-06-26 13:13:20,020  Replaced initializer 'val_1234' with existing initializer 'val_1186'
+2026-06-26 13:13:20,021  Replaced initializer 'val_1238' with existing initializer 'val_1190'
+2026-06-26 13:13:20,021  Replaced initializer 'val_1241' with existing initializer 'val_1193'
+2026-06-26 13:13:20,022  Replaced initializer 'val_1257' with existing initializer 'val_1186'
+2026-06-26 13:13:20,023  Replaced initializer 'val_1261' with existing initializer 'val_1190'
+2026-06-26 13:13:20,023  Replaced initializer 'val_1264' with existing initializer 'val_1193'
+2026-06-26 13:13:20,024  Replaced initializer 'val_1277' with existing initializer 'val_1229'
+2026-06-26 13:13:20,024  Replaced initializer 'val_1282' with existing initializer 'val_1186'
+2026-06-26 13:13:20,025  Replaced initializer 'val_1286' with existing initializer 'val_1190'
+2026-06-26 13:13:20,025  Replaced initializer 'val_1289' with existing initializer 'val_1193'
+2026-06-26 13:13:20,026  Replaced initializer 'val_1305' with existing initializer 'val_1186'
+2026-06-26 13:13:20,026  Replaced initializer 'val_1309' with existing initializer 'val_1190'
+2026-06-26 13:13:20,027  Replaced initializer 'val_1312' with existing initializer 'val_1193'
+2026-06-26 13:13:20,027  Replaced initializer 'val_1328' with existing initializer 'val_1186'
+2026-06-26 13:13:20,028  Replaced initializer 'val_1332' with existing initializer 'val_1190'
+2026-06-26 13:13:20,028  Replaced initializer 'val_1335' with existing initializer 'val_1193'
+2026-06-26 13:13:20,029  Replaced initializer 'val_1348' with existing initializer 'val_1229'
+2026-06-26 13:13:20,030  Replaced initializer 'val_1353' with existing initializer 'val_1186'
+2026-06-26 13:13:20,030  Replaced initializer 'val_1357' with existing initializer 'val_1190'
+2026-06-26 13:13:20,031  Replaced initializer 'val_1360' with existing initializer 'val_1193'
+2026-06-26 13:13:20,031  Replaced initializer 'val_1376' with existing initializer 'val_1186'
+2026-06-26 13:13:20,032  Replaced initializer 'val_1380' with existing initializer 'val_1190'
+2026-06-26 13:13:20,032  Replaced initializer 'val_1383' with existing initializer 'val_1193'
+2026-06-26 13:13:20,033  Replaced initializer 'val_1399' with existing initializer 'val_1186'
+2026-06-26 13:13:20,033  Replaced initializer 'val_1403' with existing initializer 'val_1190'
+2026-06-26 13:13:20,034  Replaced initializer 'val_1406' with existing initializer 'val_1193'
+2026-06-26 13:13:20,034  Replaced initializer 'val_1422' with existing initializer 'val_1186'
+2026-06-26 13:13:20,035  Replaced initializer 'val_1426' with existing initializer 'val_1190'
+2026-06-26 13:13:20,035  Replaced initializer 'val_1429' with existing initializer 'val_1193'
+2026-06-26 13:13:20,036  Replaced initializer 'val_1442' with existing initializer 'val_1229'
+2026-06-26 13:13:20,037  Replaced initializer 'val_1447' with existing initializer 'val_1186'
+2026-06-26 13:13:20,037  Replaced initializer 'val_1451' with existing initializer 'val_1190'
+2026-06-26 13:13:20,038  Replaced initializer 'val_1454' with existing initializer 'val_1193'
+2026-06-26 13:13:20,038  Replaced initializer 'val_1470' with existing initializer 'val_1186'
+2026-06-26 13:13:20,039  Replaced initializer 'val_1474' with existing initializer 'val_1190'
+2026-06-26 13:13:20,039  Replaced initializer 'val_1477' with existing initializer 'val_1193'
+2026-06-26 13:13:20,040  Replaced initializer 'val_1493' with existing initializer 'val_1186'
+2026-06-26 13:13:20,040  Replaced initializer 'val_1497' with existing initializer 'val_1190'
+2026-06-26 13:13:20,041  Replaced initializer 'val_1500' with existing initializer 'val_1193'
+2026-06-26 13:13:20,042  Replaced initializer 'val_1516' with existing initializer 'val_1186'
+2026-06-26 13:13:20,042  Replaced initializer 'val_1520' with existing initializer 'val_1190'
+2026-06-26 13:13:20,043  Replaced initializer 'val_1523' with existing initializer 'val_1193'
+2026-06-26 13:13:20,043  Replaced initializer 'val_1539' with existing initializer 'val_1186'
+2026-06-26 13:13:20,044  Replaced initializer 'val_1543' with existing initializer 'val_1190'
+2026-06-26 13:13:20,044  Replaced initializer 'val_1546' with existing initializer 'val_1193'
+2026-06-26 13:13:20,045  Replaced initializer 'val_1559' with existing initializer 'val_1229'
+2026-06-26 13:13:20,046  Replaced initializer 'val_1301' with existing initializer 'val_1253'
+2026-06-26 13:13:20,047  Replaced initializer 'val_1324' with existing initializer 'val_1253'
+2026-06-26 13:13:20,047  Replaced initializer 'val_1372' with existing initializer 'val_1253'
+2026-06-26 13:13:20,048  Replaced initializer 'val_1395' with existing initializer 'val_1253'
+2026-06-26 13:13:20,048  Replaced initializer 'val_1418' with existing initializer 'val_1253'
+2026-06-26 13:13:20,049  Replaced initializer 'val_1466' with existing initializer 'val_1253'
+2026-06-26 13:13:20,049  Replaced initializer 'val_1489' with existing initializer 'val_1253'
+2026-06-26 13:13:20,050  Replaced initializer 'val_1512' with existing initializer 'val_1253'
+2026-06-26 13:13:20,050  Replaced initializer 'val_1535' with existing initializer 'val_1253'
+2026-06-26 13:13:20,578  Saving bundle to /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/model/output_v2/model-bundle.zip.
+2026-06-26 13:14:22,698  Model bundle saved @ /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/model/output_v2/
+2026-06-26 13:14:22,699  Making and plotting sample predictions on the valid set...
+2026-06-26 13:14:24,700  Sample predictions written to /run/user/1873013943/gvfs/smb-share:server=sarlserver06.cas.vanderbilt.edu,share=sarl_commons06/Wernke_projects/GeoPACHA/Imagery_Machine_Learning/Image_Preprocessing/Cloud_Removal_Project/model/output_v2/valid_preds.png.
+2026-06-26 13:14:24,701  Validation prediction plots saved

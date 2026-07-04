@@ -1,0 +1,12 @@
+2026-07-03 14:51:10,315  Matched 12 image/AOI pairs
+2026-07-03 14:51:10,316  Building dataloaders…
+2026-07-03 14:51:37,248  Tile counts — train: 7081 val: 3058  test: 5936
+2026-07-03 14:51:37,793  Model loaded (FPN/ResNet50, 8-band input, 2 output classes)
+2026-07-03 14:51:38,008  Starting training for 11 epochs
+2026-07-03 14:51:38,010  train_ds: 7081 items
+2026-07-03 14:51:38,010  test_ds: 5936 items
+2026-07-03 14:51:38,011  Plotting sample training batch.
+2026-07-03 14:51:38,136  Many albumentations transforms require uint8 input. Therefore, we recommend passing a MinMaxTransformer or StatsTransformer to the RasterSource so the input will be converted to uint8.
+2026-07-03 14:51:38,266  Many albumentations transforms require uint8 input. Therefore, we recommend passing a MinMaxTransformer or StatsTransformer to the RasterSource so the input will be converted to uint8.
+2026-07-03 14:51:38,305  Many albumentations transforms require uint8 input. Therefore, we recommend passing a MinMaxTransformer or StatsTransformer to the RasterSource so the input will be converted to uint8.
+2026-07-03 14:51:38,363  Many albumentations transforms require uint8 input. Therefore, we recommend passing a MinMaxTransformer or StatsTransformer to the RasterSource so the input will be converted to uint8.
