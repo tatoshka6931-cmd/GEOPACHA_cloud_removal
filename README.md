@@ -33,3 +33,18 @@ v4 epoch 10 stats:
  'cloud_f1': 0.9710693955421448,
  'valid_time': '0:03:04.714236'}
  
+v5
+{'epoch': 10,
+ 'train_loss': 0.0810246393084526,
+ 'train_time': '0:11:59.199859',
+ 'val_loss': 0.03278022259473801,
+ 'avg_precision': 0.9898673295974731,
+ 'avg_recall': 0.9898840188980103,
+ 'avg_f1': 0.9898756742477417,
+ 'background_precision': 0.9925947785377502,
+ 'background_recall': 0.9943654537200928,
+ 'background_f1': 0.9934793710708618,
+ 'cloud_precision': 0.9804724454879761,
+ 'cloud_recall': 0.9744476079940796,
+ 'cloud_f1': 0.9774507284164429,
+ 'valid_time': '0:03:15.947345'}
