@@ -1,4 +1,6 @@
 #cloud_removal_training.py
+import matplotlib
+matplotlib.use('Agg')
 import logging
 import torch
 from torch.utils.data import DataLoader, ConcatDataset
@@ -98,7 +100,7 @@ def build_learner(train_dl: DataLoader, val_dl: DataLoader, test_dl: DataLoader)
         batch_sz=BATCH_SIZE,
         num_epochs=NUM_EPOCHS,
         lr=LR,
-        class_loss_weights=[1.0, 10.0])
+        class_loss_weights=[1.0, 8.0])
     
     learner_cfg = SemanticSegmentationLearnerConfig(data=data_cfg, solver=solver_cfg)
 
