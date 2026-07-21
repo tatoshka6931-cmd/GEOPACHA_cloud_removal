@@ -3,13 +3,12 @@ import shutil
 import logging
 from pathlib import Path
 import torch
-from rastervision.core.data import SemanticSegmentationLabels
-from rastervision.pytorch_learner import (
-    SemanticSegmentationGeoDataConfig,
-    SolverConfig,
-    SemanticSegmentationLearnerConfig,
-    SemanticSegmentationLearner,
-)
+from rastervision.core.data import (SemanticSegmentationLabels,
+                                    PolygonVectorOutputConfig)
+from rastervision.pytorch_learner import (SemanticSegmentationGeoDataConfig,
+                                          SolverConfig,
+                                          SemanticSegmentationLearnerConfig,
+                                          SemanticSegmentationLearner)
 
 # edit cloud_removal_config.py file
 from cloud_removal_config import (
@@ -27,11 +26,12 @@ from cloud_removal_config import (
     OUTPUT_DIRECTORY,
     LOCAL_LABELS_DIR,
     WEIGHTS_PATH,
+    DENOISE_FACTOR
 )
 # lower for inference, else it crashes
 NUM_WORKERS=0
 
-TARGET_IMAGE_ID = "1030010058BF5300" # edit if want to run on target image
+TARGET_IMAGE_ID = "1030010024967900" # edit if want to run on target image
  
 # minimal learner setup for inference 
 class InferenceLearner(SemanticSegmentationLearner):
@@ -56,8 +56,7 @@ def load_model():
     model.load_state_dict(state_dict)
     model.eval()
     logging.info('loading model complete')
-    return model
- 
+    return model 
  
 def make_learner():
     model = load_model()
@@ -104,13 +103,26 @@ def run_inference_on_image(learner: InferenceLearner, sample: dict):
 def save_and_copy_predictions(pred_labels, ds, img_id):
     local_out = Path(LOCAL_LABELS_DIR)/img_id
     local_out.mkdir(parents=True, exist_ok=True)
+
+    cloud_class_id = class_config.get_class_id('cloud')
     pred_labels.save(
         uri=str(local_out),
         crs_transformer=ds.scene.raster_source.crs_transformer,
         class_config=class_config,
+        smooth_output=False,
         discrete_output=True,
+        vector_outputs=[
+            PolygonVectorOutputConfig(class_id=cloud_class_id, denoise=DENOISE_FACTOR)
+        ],
     )
-    logging.info(f'[{img_id}] Labels saved locally @ {local_out}')
+
+    class_name = class_config.get_name(cloud_class_id)
+    generated = local_out / 'vector_output' / f'class-{cloud_class_id}-{class_name}.json'
+    if generated.exists():
+        generated.rename(local_out / f'{img_id}_clouds.geojson')
+        generated.parent.rmdir()
+
+    logging.info(f'[{img_id}] Labels + vector polygons saved locally @ {local_out}')
 
     server_out = Path(OUTPUT_DIRECTORY)/'predictions'/img_id
     server_out.mkdir(parents=True, exist_ok=True)
@@ -121,9 +133,13 @@ def save_and_copy_predictions(pred_labels, ds, img_id):
 
 def run_inference_on_full_image(learner: InferenceLearner, image_id: str):
     image_uri = find_image_by_id(image_id)
-    logging.info(f'[{image_id}]: running inference on FULL image (no AOI)')
+    run_inference_on_image_path(learner, image_uri, img_id=image_id)
+
+
+def run_inference_on_image_path(learner: InferenceLearner, image_uri: str, img_id: str):
+    logging.info(f'[{img_id}]: running inference on FULL image (no AOI)')
     ds = build_full_image_ds(image_uri, stride=INFER_STRIDE)
-    logging.info(f'[{image_id}]  {len(ds)} tiles to predict')
+    logging.info(f'[{img_id}]  {len(ds)} tiles to predict')
 
     with torch.no_grad():
         predictions = learner.predict_dataset(
@@ -135,7 +151,7 @@ def run_inference_on_full_image(learner: InferenceLearner, image_id: str):
         ds.windows, predictions, smooth=True,
         extent=ds.scene.extent, num_classes=len(class_config),
     )
-    save_and_copy_predictions(pred_labels, ds, image_id)
+    save_and_copy_predictions(pred_labels, ds, img_id)
 
 
 
@@ -164,8 +180,6 @@ def run_inference():
                 logging.error(f'[{sample["img_id"]}] Failed: {exc}', exc_info=True)
 
     logging.info('Inference complete.')
- 
-
 
 
  
