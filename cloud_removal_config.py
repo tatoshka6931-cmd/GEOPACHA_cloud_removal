@@ -22,24 +22,30 @@ IMAGE_DIRECTORY  = f'{GVFS_BASE}/Images/'
 AOI_DIRECTORY    = f'{GVFS_BASE}/AOI/'
 LABELS_URI       = f'{GVFS_BASE}/Labels.geojson'
 LOG_DIRECTORY    = f'{GVFS_BASE}/model/training_logs/'
-OUTPUT_DIRECTORY = f'{GVFS_BASE}/model/output_v2/'
+OUTPUT_DIRECTORY = f'{GVFS_BASE}/model/output_v5/'
 LOCAL_LABELS_DIR = '/home/kapitot/labels_output_tempfolder/'
 WEIGHTS_PATH = f'{OUTPUT_DIRECTORY}cloud_model_weights.pth'    # train.py writes here; infer.py reads from here.
 LOCAL_IMG_CACHE = '/home/kapitot/images_local_copy/'
  
 # parameters 
-BATCH_SIZE   = 8
+BATCH_SIZE   = 4
 TILE_SIZE    = 512   # 512x512 
 TRAIN_STRIDE = 256   # 50% overlap during training
-INFER_STRIDE = 512   # each pixel predicted once
-NUM_EPOCHS   = 9
+INFER_STRIDE = 384   # each pixel predicted once
+NUM_EPOCHS   = 11
 LR           = 1e-3
-NUM_WORKERS  = 4
+NUM_WORKERS  = 1
+DENOISE_FACTOR = 4   # 0 means vectorization preserves all pixels, more means small polygons are removed
 
 SEED         = 79
 random.seed(SEED)
 torch.manual_seed(SEED)
 np.random.seed(SEED)
+
+# for normalization, taken from sampling 7 training images
+BAND_MIN = np.array([185.96173095703125, 144.16189575195312, 147.98898315429688, 118.5534439086914, 61.917999267578125, 139.77911376953125, 115.52350616455078, 109.8231201171875], dtype=np.float32)
+BAND_MAX = np.array([1458.396728515625, 1260.8734130859375, 1765.0263671875, 1881.217041015625, 1096.9659423828125, 1761.27685546875, 1233.986328125, 1588.3638916015625], dtype=np.float32)
+
  
 # classes
 class_config = ClassConfig(
@@ -65,10 +71,11 @@ def setup_logging(mode: str) -> None:
  
 # normalize image to resnet50 standards to [0,1]
 def normalize_img_values(image, mask=None, **kwargs):
-    image = (image - image.min()) / (image.max() - image.min() + 1e-6)
+    image = np.clip(image, BAND_MIN[None, None, :], BAND_MAX[None, None, :])
+    image = (image - BAND_MIN[None, None, :]) / (BAND_MAX[None, None, :] - BAND_MIN[None, None, :] + 1e-6)
     return {'image': image, 'mask': mask}
  
- 
+
 # helper functions
 def match_data():
     """
