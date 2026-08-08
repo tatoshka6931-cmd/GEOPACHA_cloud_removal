@@ -78,10 +78,6 @@ def normalize_img_values(image, mask=None, **kwargs):
 
 # helper functions
 def match_data():
-    """
-    Pair every AOI GeoJSON with its matching WV-2 TIF, shuffle, then split
-    70 / 15 / 15 into train / val / test.
-    """
     all_samples = []
     for aoi_path in Path(AOI_DIRECTORY).glob('*.geojson'):
         image_id = aoi_path.stem[9:]   # strip the 'aoi_clip_' prefix
@@ -106,16 +102,8 @@ def match_data():
  
  
 def build_single_ds(sample: dict, stride: int, with_labels: bool = True):
-    """
-    Build a SemanticSegmentationSlidingWindowGeoDataset for one image.
- 
-    Parameters
-    ----------
-    sample      : dict with 'image_uri' and 'aoi_uri'
-    stride      : tile stride in pixels (pass TRAIN_STRIDE or INFER_STRIDE)
-    with_labels : include label_vector_uri; set False when running on images
-                  that have no ground-truth cloud annotations yet
-    """
+    #Build a SemanticSegmentationSlidingWindowGeoDataset for one image.
+
     label_kw = {}
     if with_labels:
         label_kw['label_vector_uri']              = LABELS_URI
@@ -136,7 +124,7 @@ def build_single_ds(sample: dict, stride: int, with_labels: bool = True):
     )
  
 def find_image_by_id(image_id: str) -> str:
-    """Locate the full-resolution TIF for a given image ID, regardless of AOI."""
+    #Locate the full-resolution TIF for a given image ID, regardless of AOI
     matches = list(Path(IMAGE_DIRECTORY).glob(f'*{image_id}*.TIF'))
     if not matches:
         raise FileNotFoundError(f'No image found for id={image_id} in {IMAGE_DIRECTORY}')
@@ -146,10 +134,9 @@ def find_image_by_id(image_id: str) -> str:
 
 
 def build_full_image_ds(image_uri: str, stride: int):
-    """
-    Sliding-window dataset over the WHOLE image — no AOI restriction.
-    Omitting aoi_uri/within_aoi means windows cover the full raster extent.
-    """
+    # Sliding-window dataset over the WHOLE image — no AOI restriction.
+    # Omitting aoi_uri/within_aoi means windows cover the full raster extent.
+    
     image_uri=get_local_image_copy(image_uri)
 
     return SemanticSegmentationSlidingWindowGeoDataset.from_uris(
@@ -163,7 +150,7 @@ def build_full_image_ds(image_uri: str, stride: int):
 
 
 def get_local_image_copy(image_uri: str) -> str:
-    """Copy a raster to local disk once, so sliding-window reads don't hit Samba per-tile."""
+    # get local copy to prevent crashes
     Path(LOCAL_IMG_CACHE).mkdir(parents=True, exist_ok=True)
     local_path = Path(LOCAL_IMG_CACHE) / Path(image_uri).name
 
