@@ -1,9 +1,4 @@
-# GEOPACHA Cloud Removal — User Guide
-
-This guide explains what the pipeline does, how to run it, and how to adapt it
-for your own imagery. For the underlying methodology, band-normalization
-rationale, and training-data decisions, see `GeoPACHA_documentation.docx` in
-this repo — read it before changing normalization or training data.
+# GEOPACHA Cloud Removal User Guide
 
 ## 1. What this pipeline does
 
@@ -14,8 +9,8 @@ downstream analysis. It's a semantic segmentation model (2 classes:
 [`AdeelH/pytorch-fpn`](https://github.com/AdeelH/pytorch-fpn)), trained with
 [RasterVision](https://docs.rastervision.io/).
 
-Output for each processed image: a raster cloud mask plus a vectorized
-GeoJSON of cloud polygons.
+Output for each processed image: a vectorized
+GeoJSON of the background polygons with the clouds removed. 
 
 ## 2. Repository structure
 
